@@ -1,10 +1,55 @@
 label{
     display: block;
-    margin-bottom: 1rem;
+    
+}
+
+table{
+    margin: auto;
+    text-align: left;
+}
+
+td{
+    padding: 1rem 1rem 1rem 1rem; 
+}
+
+.output{
+    margin: 1rem 0 0 1rem;
 }
 
 body{
     width: 75vw;
     margin: auto;
     text-align: center;
+    font-weight: 900;
+    font-size: large;
+    background-color: rgb(51, 150, 255);
+}
+
+button{
+    margin-top: 2rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-weight: 900;
+    font-size: large;
+    border-radius: 10px;
+    background-color: rgb(255, 222, 113);
+    box-shadow: 10px 10px 15px white;
+}
+
+input{
+    font-weight: 900;
+    font-size: large;
+    border-radius: 10px;
+    background-color: rgb(255, 222, 113);
+    box-shadow: 5px 5px 7px white;
+}
+
+.output{
+    font-size: x-large;
+    height: 20vh;
+    margin-top: 4rem;
+}
+
+button:hover{
+    font-size: x-large;
+    /* padding: 1rem 1rem 1rem 1rem; */
 }

@@ -14,15 +14,24 @@ checkBtn.addEventListener("click", function pnlCalculator() {
     var curr = Number(currentPrice.value);
     var qty = Number(noOfStocks.value);
 
-    if (ip > curr) {
+    if (curr === 0) {
+        outputDiv.innerText = "You need to Specify the Values.";
+        outputDiv.style.display = "block";
+    } else if (ip === 0) {
+        outputDiv.innerText = "You need to Specify the Values.";
+        outputDiv.style.display = "block";
+    } else if (qty === 0) {
+        outputDiv.innerText = "You need to Specify the Values.";
+        outputDiv.style.display = "block";
+    } else if (ip > curr) {
         var pnl = (ip - curr) * qty;
         var pnlPercent = ((pnl / (ip * qty)) * 100);
-        outputDiv.innerText = "your Loss is " + pnl + " and loss percentage is " + pnlPercent + "%";
+        outputDiv.innerText = "your Loss is " + pnl + " and loss percentage is " + pnlPercent + "%." + " Should have done your own Research.";
         outputDiv.style.display = "block";
     } else if (curr > ip) {
         var pnl = (curr - ip) * qty;
         var pnlPercent = ((pnl / (ip * qty)) * 100);
-        outputDiv.innerText = "your Profit is " + pnl + "  and profit percentage is " + pnlPercent + "%";
+        outputDiv.innerText = "your Profit is " + pnl + "  and profit percentage is " + pnlPercent + "%." + " Sharmaji was Right.";
         outputDiv.style.display = "block";
     } else {
         outputDiv.innerText = "you were wrong about F.D."
