@@ -25,6 +25,8 @@ checkBtn.addEventListener("click", function pnlCalculator() {
         outputDiv.style.display = "block";
         outputDiv.style.backgroundColor = "Red";
         outputDiv.style.color = "rgb(51, 150, 255)";
+        outputDiv.style.paddingLeft = "1rem";
+        outputDiv.style.paddingRight = "1rem";
 
     } else if (curr > ip) {
         var pnl = Math.trunc((curr - ip) * qty);
@@ -33,6 +35,8 @@ checkBtn.addEventListener("click", function pnlCalculator() {
         outputDiv.style.display = "block";
         outputDiv.style.backgroundColor = "Green";
         outputDiv.style.color = "rgb(51, 150, 255)";
+        outputDiv.style.paddingLeft = "1rem";
+        outputDiv.style.paddingRight = "1rem";
 
     } else {
         outputDiv.innerText = "You were wrong about F.D."
