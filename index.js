@@ -19,16 +19,16 @@ checkBtn.addEventListener("click", function pnlCalculator() {
         outputDiv.style.display = "block";
 
     } else if (ip > curr) {
-        var pnl = (ip - curr) * qty;
-        var pnlPercent = ((pnl / (ip * qty)) * 100);
+        var pnl = Math.trunc((ip - curr) * qty);
+        var pnlPercent = Math.trunc((pnl / (ip * qty)) * 100);
         outputDiv.innerText = "Your Loss is " + pnl + " and loss percentage is " + pnlPercent + "%." + " Should have done your own Research.";
         outputDiv.style.display = "block";
         outputDiv.style.backgroundColor = "Red";
         outputDiv.style.color = "rgb(51, 150, 255)";
 
     } else if (curr > ip) {
-        var pnl = (curr - ip) * qty;
-        var pnlPercent = ((pnl / (ip * qty)) * 100);
+        var pnl = Math.trunc((curr - ip) * qty);
+        var pnlPercent = Math.trunc((pnl / (ip * qty)) * 100);
         outputDiv.innerText = "Your Profit is " + pnl + "  and profit percentage is " + pnlPercent + "%." + " Sharmaji was Right.";
         outputDiv.style.display = "block";
         outputDiv.style.backgroundColor = "Green";
