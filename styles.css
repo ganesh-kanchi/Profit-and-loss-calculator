@@ -50,6 +50,7 @@ input{
     background-color: rgb(255, 222, 113);
     box-shadow: 5px 5px 7px white;
     max-width: 40vw;
+    padding-left: 10px;
 }
 
 .output{
