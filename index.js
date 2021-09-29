@@ -13,6 +13,9 @@ checkBtn.addEventListener("click", function pnlCalculator() {
     var ip = Number(initialPrice.value);
     var curr = Number(currentPrice.value);
     var qty = Number(noOfStocks.value);
+    outputDiv.style.color = "rgb(51, 150, 255)";
+    outputDiv.style.paddingLeft = "1rem";
+    outputDiv.style.paddingRight = "1rem";
 
     if ((curr === 0) || (ip === 0) || (qty === 0)) {
         outputDiv.innerText = "You need to Specify the Values.";
@@ -24,9 +27,6 @@ checkBtn.addEventListener("click", function pnlCalculator() {
         outputDiv.innerText = "Your Loss is " + pnl + " and loss percentage is " + pnlPercent + "%." + " Should have done your own Research.";
         outputDiv.style.display = "block";
         outputDiv.style.backgroundColor = "Red";
-        outputDiv.style.color = "rgb(51, 150, 255)";
-        outputDiv.style.paddingLeft = "1rem";
-        outputDiv.style.paddingRight = "1rem";
 
     } else if (curr > ip) {
         var pnl = Math.trunc((curr - ip) * qty);
@@ -34,12 +34,10 @@ checkBtn.addEventListener("click", function pnlCalculator() {
         outputDiv.innerText = "Your Profit is " + pnl + "  and profit percentage is " + pnlPercent + "%." + " Sharmaji was Right.";
         outputDiv.style.display = "block";
         outputDiv.style.backgroundColor = "Green";
-        outputDiv.style.color = "rgb(51, 150, 255)";
-        outputDiv.style.paddingLeft = "1rem";
-        outputDiv.style.paddingRight = "1rem";
 
     } else {
         outputDiv.innerText = "You were wrong about F.D."
         outputDiv.style.display = "block";
+        outputDiv.style.color = "black";
     }
 });

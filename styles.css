@@ -15,7 +15,7 @@ td{
 .output{
     margin: 1rem 0 0 1rem;
     padding: 1rem 0 1rem 0;
-    width: 50vw;
+    max-width: 50vw;
     align-self: center;
     margin: auto;
     font-weight: 900;
