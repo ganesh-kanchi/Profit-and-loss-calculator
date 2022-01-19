@@ -5,10 +5,7 @@ const checkBtn = document.querySelector("#check-btn");
 const outputDiv = document.querySelector(".output");
 outputDiv.style.display = "none";
 
-
-
-
-checkBtn.addEventListener("click", function pnlCalculator() {
+checkBtn.addEventListener("click", () => {
 
     var ip = Number(initialPrice.value);
     var curr = Number(currentPrice.value);
@@ -17,27 +14,15 @@ checkBtn.addEventListener("click", function pnlCalculator() {
     outputDiv.style.paddingLeft = "1rem";
     outputDiv.style.paddingRight = "1rem";
 
-    if ((curr === 0) || (ip === 0) || (qty === 0)) {
-        outputDiv.innerText = "You need to Specify the Values.";
-        outputDiv.style.display = "block";
-
-    } else if (ip > curr) {
-        var pnl = Math.trunc((ip - curr) * qty);
-        var pnlPercent = Math.trunc((pnl / (ip * qty)) * 100);
-        outputDiv.innerText = "Your Loss is " + pnl + " and loss percentage is " + pnlPercent + "%." + " Should have done your own Research.";
-        outputDiv.style.display = "block";
-        outputDiv.style.backgroundColor = "Red";
-
-    } else if (curr > ip) {
-        var pnl = Math.trunc((curr - ip) * qty);
-        var pnlPercent = Math.trunc((pnl / (ip * qty)) * 100);
-        outputDiv.innerText = "Your Profit is " + pnl + "  and profit percentage is " + pnlPercent + "%." + " Sharmaji was Right.";
-        outputDiv.style.display = "block";
-        outputDiv.style.backgroundColor = "Green";
-
-    } else {
-        outputDiv.innerText = "You were wrong about F.D."
-        outputDiv.style.display = "block";
-        outputDiv.style.color = "black";
-    }
+    var pnl = (ip > curr) ? Math.trunc((ip - curr) * qty) : (curr > ip) && Math.trunc((curr - ip) * qty);
+    var pnlPercent = Math.trunc((pnl / (ip * qty)) * 100);
+    outputDiv.innerText = ((curr === 0) || (ip === 0) || (qty === 0)) 
+        ? "You need to Specify the Values." 
+            : (ip > curr) 
+        ? `Your Loss is ${pnl} and loss percentage is ${pnlPercent}%. Should have done your own Research.` 
+            : (curr > ip) 
+        ? `Your Profit is ${pnl}  and profit percentage is ${pnlPercent}%. Sharmaji were Right.` 
+            : "You were wrong about F.D. ";
+    outputDiv.style.display = "block";
+    outputDiv.style.backgroundColor = (ip > curr) ? "Red" : (curr > ip) && "Green";
 });
